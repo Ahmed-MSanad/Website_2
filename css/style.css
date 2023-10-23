@@ -164,6 +164,7 @@ header .sec3 .pages li a {
   transform-origin: top left;
   visibility: hidden;
   opacity: 0;
+  z-index: 2000;
   transition: all 1s;
 }
 .Home-dropDown:hover .table,
