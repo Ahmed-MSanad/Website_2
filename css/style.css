@@ -1,0 +1,616 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+i,
+button {
+  cursor: pointer;
+}
+button {
+  padding: 10px 15px;
+  background-color: #d37809;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+h2 {
+  text-transform: capitalize;
+}
+
+header {
+  color: #fff;
+  background-color: rgb(8 108 108 / 78%);
+  padding: 20px;
+}
+
+.sec1 {
+  display: flex;
+  justify-content: flex-end;
+}
+.user-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.user-links li {
+  list-style-type: none;
+}
+.user-links li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sec2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  margin-top: 20px;
+}
+.sec2 h3 {
+  text-transform: uppercase;
+}
+.sec2 h3 span {
+  color: rgb(255, 255, 44);
+}
+.sec2 .search {
+  display: flex;
+  width: 50%;
+  flex-flow: row wrap;
+  position: relative;
+}
+.sec2 .search select {
+  padding: 8px;
+  border-radius: 20px 0px 0px 20px;
+  border: none;
+}
+.sec2 .search input {
+  flex-grow: 2;
+  padding: 8px;
+  border-radius: 0px 20px 20px 0px;
+  border: none;
+}
+.sec2 .search i {
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  color: #000;
+}
+
+.sec2 .favorite {
+  position: relative;
+}
+.sec2 .favorite p {
+  position: absolute;
+  top: -9px;
+  right: -7px;
+  background-color: #ffff2c;
+  color: #000;
+  border-radius: 50%;
+  width: 15px;
+  height: 18px;
+  text-align: center;
+}
+
+header .sec3 {
+  margin-top: 20px;
+  position: relative;
+}
+header .sec3 .line {
+  background-color: #7dbbbb;
+  width: 90%;
+  height: 1px;
+  margin: auto;
+}
+header .sec3 .pages {
+  width: 85%;
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+header .sec3 .pages li {
+  list-style-type: none;
+  padding: 5px;
+  border-left: 0px solid #fff;
+  position: relative;
+}
+header .sec3 .pages li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+  transform: scale(1, 0);
+  transition: transform 1s;
+}
+header .sec3 .pages li:hover::before {
+  transform: scale(1, 1);
+}
+header .sec3 .pages li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-width: 1px 0px;
+  border-style: solid;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform 1s;
+}
+header .sec3 .pages li:hover::after {
+  transform: scale(1, 1);
+}
+header .sec3 .pages li a {
+  text-decoration: none;
+  color: #fff;
+}
+.table {
+  display: flex;
+  background: #20c2c2;
+  justify-content: space-around;
+  position: absolute;
+  width: 300px;
+  padding: 20px;
+  left: 5px;
+  top: 40px;
+  transform: scale(0, 0);
+  transform-origin: top left;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+.Home-dropDown:hover .table,
+.table:hover {
+  transform: scale(1, 1);
+  visibility: visible;
+  opacity: 1;
+}
+.table-title {
+  border-bottom: 1px dotted #000;
+  font-size: 25px;
+  font-weight: bold;
+}
+.table-title a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* ################################# */
+
+.container {
+}
+.clothes {
+  margin: 25px auto;
+  width: 90%;
+  height: 120vh;
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px 10px;
+}
+.main-item {
+  grid-column: 1/4;
+  background-image: url(../images/cover_3.jpg);
+  background-size: cover;
+}
+.main-item .main-overlay {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: #0000007d;
+  position: relative;
+}
+.main-item .main-overlay .content {
+  width: 45%;
+  position: absolute;
+  top: 50%;
+  transform: translate(20%, -50%);
+}
+.main-item .main-overlay h6 {
+  color: #d37809;
+  font-size: 13px;
+}
+.main-item .main-overlay h1 {
+  text-transform: uppercase;
+  margin: 15px 0px;
+  line-height: 30px;
+  letter-spacing: 9px;
+  font-weight: 900;
+}
+.main-item .main-overlay button {
+  padding: 12px 20px;
+  background-color: #d37809;
+  margin: 15px 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+}
+.item-contain {
+  height: 100%;
+}
+.item {
+  height: 90%;
+  background-image: url(../images/product.webp);
+  background-size: cover;
+  background-position: center;
+}
+.item2 {
+  height: 90%;
+  background-image: url(../images/product2.webp);
+  background-size: cover;
+  background-position: center;
+}
+.item3 {
+  height: 90%;
+  background-image: url(../images/product3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.item-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #0000007d;
+  color: #fff;
+  position: relative;
+}
+.item-overlay .content {
+  width: 60%;
+  line-height: 40px;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.item-overlay .content button {
+  padding: 10px 15px;
+  background-color: #d37809;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+.item-sale {
+  color: #d37809;
+}
+.item-des {
+  height: 10%;
+  position: relative;
+  font-weight: 600;
+}
+.item-des p:first-child {
+  color: #bbb;
+}
+.item-des p:last-child {
+}
+.item-des i {
+  position: absolute;
+  font-size: 25px;
+  bottom: -7px;
+  right: 0px;
+  visibility: hidden;
+}
+.item-contain:hover i {
+  visibility: visible;
+}
+/* ################################# */
+.container2 {
+  width: 90%;
+  margin: 40px auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1.4fr;
+  grid-template-rows: 300px;
+  grid-gap: 30px;
+}
+.opinion {
+  background-color: #ddd;
+  padding: 30px;
+}
+.title {
+  display: flex;
+  margin-bottom: 20px;
+}
+.title .icon {
+  border: none;
+}
+.title h2 {
+}
+.title h2 p {
+  font-size: 13px;
+  font-weight: 200;
+}
+.title i {
+  color: #d37809;
+}
+.lines {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+.lines p {
+  padding: 1px 20px;
+  margin-left: 20px;
+  background-color: #000;
+}
+.person {
+  background-image: url(../images/person3.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s;
+}
+.person:hover {
+  transform: scale(1.1, 1.1);
+}
+.bought {
+  background-image: url(../images/person3.webp);
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s;
+}
+.bought:hover {
+  transform: scale(1.1, 1.1);
+}
+
+/* ################################# */
+.container3 {
+}
+.con3-icon {
+  width: 90%;
+  margin: 30px auto;
+  height: 150px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.icon {
+  width: 18%;
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid #000;
+}
+.icon div {
+  height: 45px;
+  width: 22%;
+  position: relative;
+  margin: auto;
+  background-image: url(../images/images/service-icon.png);
+  background-position: 0px 0px;
+  transition: background-position 1s;
+}
+
+.pos1 div {
+  background-position: 0px 0px;
+}
+.pos1:hover div {
+  background-position: 0px -90px;
+}
+
+.pos2 div {
+  background-position: 0px 128px;
+}
+.pos2:hover div {
+  background-position: 0px 45px;
+}
+
+.pos3 div {
+  background-position: 0px 315px;
+}
+.pos3:hover div {
+  background-position: 0px 228px;
+}
+
+.pos4 div {
+  background-position: 0px 501px;
+}
+.pos4:hover div {
+  background-position: 0px 412px;
+}
+
+.pos5 div {
+  background-position: 0px 685px;
+}
+.pos5:hover div {
+  background-position: 0px 597px;
+}
+.pos5 {
+  border: none;
+}
+
+.icon p:last-child {
+  color: #bbb;
+}
+/* ################################# */
+.line-in-middle {
+  width: 90%;
+  height: 1px;
+  background-color: #000;
+  margin: auto;
+}
+
+/* ################################# */
+.container4 {
+  margin: 70px 0px;
+}
+.products-title {
+  margin: 30px auto;
+}
+.products-title div h2 {
+  text-align: center;
+  margin: 30px;
+}
+.products-title div p {
+  width: 10%;
+  height: 3px;
+  background-color: #000;
+  margin: auto;
+  transform: scale(1, 1);
+  transition: 1s;
+}
+.products-title:hover div p {
+  transform: scale(1.5, 1);
+}
+.products-title div ul {
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.products-title div ul li {
+  list-style-type: none;
+  position: relative;
+  padding: 10px;
+}
+.products-title div ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.products-title div ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 0px 1px;
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  transform: scale(1, 0);
+  transition: transform 1s;
+}
+.products-title div ul li:hover::after {
+  transform: scale(1, 1);
+}
+.products-title div ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-width: 1px 0px;
+  border-style: solid;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform 1s;
+}
+.products-title div ul li:hover::before {
+  transform: scale(1, 1);
+}
+.card-contain {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.card {
+  height: 400px;
+  width: 32%;
+  margin: 30px 0px;
+}
+.flip-card {
+  height: 75%;
+  position: relative;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+.backcard {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: rotateY(180deg);
+}
+.bk1 {
+  background-image: url(../images/Shirt_0.webp);
+  background-size: cover;
+}
+.bk2 {
+  background-image: url(../images/Shirt_1.jpg);
+  background-size: cover;
+}
+.bk3 {
+  background-image: url(../images/Shirt_2.webp);
+  background-size: cover;
+}
+.bk4 {
+  background-image: url(../images/Shirt_3.webp);
+  background-size: cover;
+}
+.bk5 {
+  background-image: url(../images/Shirt_5.jpg);
+  background-size: cover;
+}
+.bk6 {
+  background-image: url(../images/Shirt_6.webp);
+  background-size: cover;
+}
+.backcard .overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #00000096;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+.backcard .overlay button {
+  margin: 20px;
+}
+.backcard .overlay div {
+  font-size: 25px;
+  color: #fff;
+  letter-spacing: 8px;
+}
+.card-img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  backface-visibility: hidden;
+  background-position: center;
+}
+.product1 {
+  background-image: url(../images/Shirt_0.webp);
+  background-size: cover;
+}
+.product2 {
+  background-image: url(../images/Shirt_1.jpg);
+  background-size: cover;
+}
+.product3 {
+  background-image: url(../images/Shirt_2.webp);
+  background-size: cover;
+}
+.product4 {
+  background-image: url(../images/Shirt_3.webp);
+  background-size: cover;
+}
+.product5 {
+  background-image: url(../images/Shirt_5.jpg);
+  background-size: cover;
+}
+.product6 {
+  background-image: url(../images/Shirt_6.webp);
+  background-size: cover;
+}
+.card:hover .flip-card {
+  transform: rotateY(180deg);
+}
+.card-des {
+  height: 25%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: antiquewhite;
+}
+
+/* ################################# */
